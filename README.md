@@ -6,10 +6,13 @@ This project entails a Java solution to the Dining Philosophers problem using th
 
 ## Design Rationale:
 
-Philosophers: Represented as instances of the Philosopher class, each running in its own thread.
-Forks: Modeled using the Fork class, which employs ReentrantLock to ensure mutual exclusion when philosophers attempt to pick up forks.
-Table: The main class DiningPhilosophers initializes philosophers and forks and starts their threads.
-Eating & Thinking: Each philosopher follows a cycle of thinking, attempting to pick up forks, eating if successful, and then releasing their forks.
+**Philosophers:** Represented as instances of the Philosopher class, each running in its own thread.
+
+**Forks:** Modeled using the Fork class, which employs ReentrantLock to ensure mutual exclusion when philosophers attempt to pick up forks.
+
+**Table:** The main class DiningPhilosophers initializes philosophers and forks and starts their threads.
+
+**Eating & Thinking:** Each philosopher follows a cycle of thinking, attempting to pick up forks, eating if successful, and then releasing their forks.
 
 ## Deadlock Prevention:
 
@@ -17,8 +20,9 @@ To prevent deadlock, the last philosopher picks up the right fork before the lef
 
 ## Starvation Prevention:
 
-Timeout-Based Fork Acquisition: Philosophers attempt to pick up forks using tryLock() with a timeout, which ensures they do not wait indefinitely if a fork is unavailable.
-Fair Resource Allocation: If a philosopher fails to acquire both forks, they release any acquired forks and retry, which allows other philosophers a chance to proceed.
+**Timeout-Based Fork Acquisition:** Philosophers attempt to pick up forks using tryLock() with a timeout, which ensures they do not wait indefinitely if a fork is unavailable.
+
+**Fair Resource Allocation:** If a philosopher fails to acquire both forks, they release any acquired forks and retry, which allows other philosophers a chance to proceed.
 
 ## Race Condition Avoidance:
 
