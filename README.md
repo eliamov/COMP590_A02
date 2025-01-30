@@ -1,5 +1,7 @@
 ## COMP590 A02: Dining Philosophers Problem
 
+**Team Members:** Zachary Cunningham, Elia Movahed, Benjamin Borchelt
+
 ## Overview
 
 This project entails a Java solution to the Dining Philosophers problem using threads and synchronization mechanisms. The problem is a classic example of concurrency control in computer science, where multiple philosophers sit around a circular table with forks between them. Each philosopher alternates between thinking and eating, but to eat, they need to pick up the two forks adjacent to them.
