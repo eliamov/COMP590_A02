@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 public class DiningPhilosophers {
     public static void main(String[] args) {
         int numberOfPhilosophers = 5;
-        int maxEats = 3; // Termination condition: each philosopher eats 3 times
+        int maxEats = 3;
         Philosopher[] philosophers = new Philosopher[numberOfPhilosophers];
         Fork[] forks = new Fork[numberOfPhilosophers];
 
@@ -17,7 +17,7 @@ public class DiningPhilosophers {
             Fork rightFork = forks[(i + 1) % numberOfPhilosophers];
             
             if (i == numberOfPhilosophers - 1) {
-                philosophers[i] = new Philosopher(i, rightFork, leftFork, maxEats); // Reverse order for last philosopher
+                philosophers[i] = new Philosopher(i, rightFork, leftFork, maxEats); 
             } else {
                 philosophers[i] = new Philosopher(i, leftFork, rightFork, maxEats);
             }
@@ -66,9 +66,9 @@ class Philosopher implements Runnable {
             think();
 
             try {
-                if (leftFork.pickUp(id, 500)) { // Try picking up left fork with timeout
+                if (leftFork.pickUp(id, 500)) {
                     try {
-                        if (rightFork.pickUp(id, 500)) { // Try picking up right fork with timeout
+                        if (rightFork.pickUp(id, 500)) {
                             try {
                                 eat();
                             } finally {
